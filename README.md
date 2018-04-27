@@ -31,8 +31,9 @@ Quick and dirty way to run the pipeline:
   Input --> Annotated vcf file, Gene of Interest
 
   Usage:
-  -----
+  
   chmod +x geneReport.sh
+  
   ./geneReport.sh
   
   DETAILED INFORMATION:
