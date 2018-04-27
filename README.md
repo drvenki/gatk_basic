@@ -30,6 +30,9 @@ BWA, Samtools, Picard, Tabix, GATK, SnpEff
   
   Tools Required and Installation guide (Linux-Ubuntu):
 ----------------------------------------------------
+
+Open the <b>Terminal</b> program on your Ubuntu and copy paste these commands in same sequence
+
   1. BWA  (Alignment tool)
     
     > sudo apt-get install bwa
