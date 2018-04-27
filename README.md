@@ -13,28 +13,6 @@ geneReport.sh gets the missense variants in a particular gene.
 Tools Required:
 BWA, Samtools, Picard, Tabix, GATK, SnpEff
 
-Quick and dirty way to run the pipeline:
-
-chmod +x GATK_pipeline.sh
-
-./GATK_pipeline.sh
-
-Gene Report:
-
---> For searching your gene of interest in annotated vcf file and showing results.
-
---> while running this script, you have to give vcf file path and gene of interest (one or many as comma separated value).
-
-Input - Annotated vcf file, Gene of Interest (eg. TP53, APOE, BRCA2, etc.)
-
-  Usage:
-  
-  chmod +x geneReport.sh
-  
-  ./geneReport.sh
- 
- 
- DETAILED INFORMATION:
  
  
  To Run:
