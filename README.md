@@ -1,7 +1,7 @@
 # gatk_basic
 A very simple and basic shell script to run GATK best practice pipeline
 
-This is a basic variant calling and annotation pipeline for beginners. 
+This is a basic variant calling and annotation pipeline for beginners using haplotype caller and snpeff. 
 It is written as a single shell script. 
 
 There are two scripts included in this repository. The scripts can be found in the gatk_basic/scripts folder.
