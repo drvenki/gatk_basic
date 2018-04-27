@@ -1,12 +1,12 @@
 # gatk_basic
-A very simple and basic shell script to run GATK best practice pipeline
+A very simple and basic shell script to run GATK best practice pipeline for Ubuntu environment.
 
 This is a basic variant calling and annotation pipeline for beginners using haplotype caller and snpeff. 
 It is written as a single shell script. 
 
 There are two scripts included in this repository. The scripts can be found in the gatk_basic/scripts folder.
 
-GATK.sh script runs the pipeline for variant calling and variant annotation step by step.
+GATK_pipeline.sh script runs the pipeline for variant calling and variant annotation step by step.
 
 geneReport.sh gets the missense variants in a particular gene. 
 
@@ -20,8 +20,8 @@ Tools Required:
 
 Quick and dirty way to run the pipeline:
   
-  chmod +x GATK.sh
-  ./GATK.sh
+  chmod +x GATK_pipeline.sh
+  ./GATK_pipeline.sh
 
   Gene Report:
   
@@ -97,7 +97,7 @@ To Run:
   command to run the script:
   -------------------------
 
-  chmod +x GATK.sh
+  chmod +x GATK_pipeline.sh
   chmod +x geneReport.sh
 
   Variant Calling:
@@ -108,7 +108,7 @@ To Run:
 
   Scripts notes:
   --------------
-  --> GATK_pipeline.sh is for doing QC, aligning the samples to reference, variant calling with GATK haplotype caller and annotating the variants for functional effects.
+  --> GATK_pipeline.sh is for doing QC, aligning the samples to reference, variant calling with GATK haplotype caller and annotating the variants for functional effects with snpeff.
   --> geneReport.sh is for searching your gene of interest in annotated vcf file which is the result of GATK.sh script.
   --> you have to first run GATK_pipeline.sh script. This will produce a set of results files and out of which give annotated vcf file (gene.ann.vcf) and gene of interest (one or many as comma separated value) as Input.
 
