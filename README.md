@@ -35,9 +35,12 @@ Quick and dirty way to run the pipeline:
   chmod +x geneReport.sh
   
   ./geneReport.sh
-  
-  DETAILED INFORMATION:
-  
+ 
+ 
+ DETAILED INFORMATION:
+ 
+ 
+  
   Tools Required and Installation guide (Linux-Ubuntu):
 ----------------------------------------------------
   1. BWA  (Alignment tool)
