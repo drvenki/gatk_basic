@@ -1,0 +1,1 @@
+CHROM	RSID	REF	ALT	GENE	Transcript_Id	Protein_Id	G.Syntax	P.Syntax	TYPE	IMPACT
