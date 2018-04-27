@@ -98,6 +98,7 @@ To Run:
   -------------------------
 
   chmod +x GATK_pipeline.sh
+  
   chmod +x geneReport.sh
 
   Variant Calling:
