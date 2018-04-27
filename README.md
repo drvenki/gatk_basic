@@ -11,12 +11,7 @@ GATK_pipeline.sh script runs the pipeline for variant calling and variant annota
 geneReport.sh gets the missense variants in a particular gene. 
 
 Tools Required:
-  1. BWA 
-  2. Samtools  
-  3. Picard
-  4. Tabix
-  5. GATK
-  6. SnpEff
+BWA, Samtools, Picard, Tabix, GATK, SnpEff
 
 Quick and dirty way to run the pipeline:
   
