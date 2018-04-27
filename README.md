@@ -11,33 +11,20 @@ GATK.sh script runs the pipeline for variant calling and variant annotation step
 geneReport.sh gets the missense variants in a particular gene. 
 
 Tools Required:
-  1. BWA 
+  1. BWA 
   2. Samtools  
   3. Picard
   4. Tabix
   5. GATK
   6. SnpEff
 
-To Run:
-  1. Install tools to be required
-  2. Create a directory and place the shell script(GATK.sh) inside the directory
-  3. Place samples inside the directory or you can specify the path of the file.
-  4. Provide samples name manually inside the script,
-      if single end -> sample="read.fq"
-      if paired end -> sample="read_1.fq read_2.fq"
-  5. Download and Provide the corresponding reference genome for your data coordinates
-  6. Specify the path of jar file for Picard and GATK tools.
-  7. Select corresponding SnpEff database for your data (eg: hg38, hg19)
-
-  command to run the script:
-  -------------------------
-
+Quick and dirty way to run the pipeline:
+  
   chmod +x GATK.sh
-
   ./GATK.sh
 
   Gene Report:
-  -----------
+  
   --> For searching your gene of interest in annotated vcf file and showing results.
   --> while running this script, you have to give vcf file path and gene of interest (one or many as comma separated value).
   
@@ -46,5 +33,92 @@ To Run:
   Usage:
   -----
   chmod +x geneReport.sh
-
   ./geneReport.sh
+  
+  DETAILED INFORMATION:
+  
+  Tools Required and Installation guide (Linux-Ubuntu):
+----------------------------------------------------
+  1. BWA  (Alignment tool)
+    
+    > sudo apt-get install bwa
+
+  2. Samtools  (variant calling and sequence manipulation)
+    
+    > sudo apt-get install samtools
+
+  3. Picard (required JAVA v1.9) (sequence data manipulation and cleaning)
+
+    > wget https://github.com/broadinstitute/picard/releases/download/2.18.1/picard.jar
+    (place the file where you want)
+
+  4. Tabix (required JAVA v1.9) (data transformation)
+
+    > sudo apt-get install tabix 
+
+  5. GATK (required JAVA v1.9) (variant calling)
+
+    Download the jar file from (https://software.broadinstitute.org/gatk/download/archive)
+
+  6. SnpEff & SnpSift (required JAVA v1.9) (variant annotation)
+
+    Download the jar file from (http://snpeff.sourceforge.net/download_donate.html)
+    Building Database for reference genome from UCSC(refseq ids: NM_*, NP_*)
+      * Please follow the instructions in the given link
+      (http://snpeff.sourceforge.net/SnpEff_manual.html#databases) - Option 3: Building a database from RefSeq table from UCSC 
+
+  7. FastQC (fast raw data quality control)
+
+    > sudo apt-get install fastqc
+
+  8. XML parser for Refseq Protein id annotation (xml parsing for fetching and extracting NP ids from NCBI)
+
+    > sudo apt-get install libxml2-utils
+
+Links to download source files.
+------------------------------
+
+Reference genome --> http://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz
+
+Knownsites for GATK-Recalibration --> ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/hg38/dbsnp_138.hg38.vcf.gz
+
+To Run:
+------
+  1. Install required tools.
+  2. Create a directory and place the shell scripts (GATK.sh & geneReport.sh) and the "header.txt" file inside the same directory (> mkdir scripts)
+  3. Place samples inside the directory or you can specify the path of the file (> mkdir samples)
+  4. Provide samples name manually inside the script,
+      if single end or a single file with collapsed paired-end reads -> sample="read.fq"
+      if paired end -> sample="read_1.fq read_2.fq"
+  5. Download and provide the corresponding reference genome for your data coordinates
+  6. Specify the path of jar file for Picard and GATK tools.
+  7. Select corresponding SnpEff database for your data (eg: hg38, hg19)
+
+  command to run the script:
+  -------------------------
+
+  chmod +x GATK.sh
+  chmod +x geneReport.sh
+
+  Variant Calling:
+  -------------------------
+  ./GATK_pipeline.sh 
+  OR 
+  bash GATK_pipeline.sh
+
+  Scripts notes:
+  --------------
+  --> GATK_pipeline.sh is for doing QC, aligning the samples to reference, variant calling with GATK haplotype caller and annotating the variants for functional effects.
+  --> geneReport.sh is for searching your gene of interest in annotated vcf file which is the result of GATK.sh script.
+  --> you have to first run GATK_pipeline.sh script. This will produce a set of results files and out of which give annotated vcf file (gene.ann.vcf) and gene of interest (one or many as comma separated value) as Input.
+
+  Gene wise Report:
+  -----------------
+  NOTE: for this step, make sure the file "header.txt is in the same folder as the script"
+  ./geneReport.sh
+  OR
+  bash geneReport.sh
+
+  The results from this script will be gene.txt, gene.report.txt, gene.missense.txt. The file gene.missense.txt will contain only missense variants in the given gene.
+
+
