@@ -86,6 +86,7 @@ Reference genome --> http://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38
 
 Knownsites for GATK-Recalibration --> ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/hg38/dbsnp_138.hg38.vcf.gz
 
+
 To Run:
 ------
   1. Install required tools.
@@ -113,8 +114,11 @@ To Run:
   Scripts notes:
   --------------
   --> GATK_pipeline.sh is for doing QC, aligning the samples to reference, variant calling with GATK haplotype caller and annotating the variants for functional effects with snpeff.
-  --> geneReport.sh is for searching your gene of interest in annotated vcf file which is the result of GATK.sh script.
+  
+  --> geneReport.sh is for searching your gene of interest in annotated vcf file which is the result of GATK_pipeline.sh script.
+  
   --> you have to first run GATK_pipeline.sh script. This will produce a set of results files and out of which give annotated vcf file (gene.ann.vcf) and gene of interest (one or many as comma separated value) as Input.
+  
 
   Gene wise Report:
   -----------------
