@@ -35,6 +35,18 @@ Quick and dirty way to run the pipeline:
  DETAILED INFORMATION:
  
  
+ To Run:
+------
+  1. Install required tools.
+  2. Create a directory and place the shell scripts (GATK_pipeline.sh & geneReport.sh) and the "header.txt" file inside the same directory (> mkdir scripts)
+  3. Place samples inside the directory or you can specify the path of the file (> mkdir samples)
+  4. Provide samples name manually inside the script,
+      if single end or a single file with collapsed paired-end reads -> sample="read.fq"
+      if paired end -> sample="read_1.fq read_2.fq"
+  5. Download and provide the corresponding reference genome for your data coordinates
+  6. Specify the path of jar file for Picard and GATK tools.
+  7. Select corresponding SnpEff database for your data (eg: hg38, hg19)
+ 
   
   Tools Required and Installation guide (Linux-Ubuntu):
 ----------------------------------------------------
@@ -74,25 +86,13 @@ Quick and dirty way to run the pipeline:
 
     > sudo apt-get install libxml2-utils
 
-Links to download source files.
+Links to download annotation source files.
 ------------------------------
 
 Reference genome --> http://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz
 
 Knownsites for GATK-Recalibration --> ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/hg38/dbsnp_138.hg38.vcf.gz
 
-
-To Run:
-------
-  1. Install required tools.
-  2. Create a directory and place the shell scripts (GATK.sh & geneReport.sh) and the "header.txt" file inside the same directory (> mkdir scripts)
-  3. Place samples inside the directory or you can specify the path of the file (> mkdir samples)
-  4. Provide samples name manually inside the script,
-      if single end or a single file with collapsed paired-end reads -> sample="read.fq"
-      if paired end -> sample="read_1.fq read_2.fq"
-  5. Download and provide the corresponding reference genome for your data coordinates
-  6. Specify the path of jar file for Picard and GATK tools.
-  7. Select corresponding SnpEff database for your data (eg: hg38, hg19)
 
   command to run the script:
   -------------------------
