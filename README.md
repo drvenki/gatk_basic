@@ -6,11 +6,11 @@ It is written as a single shell script <b>to help people new to variant calling 
 
 There are two scripts included in this repository. The scripts can be found in the gatk_basic/scripts folder.
 
-GATK_pipeline.sh script runs the pipeline for variant calling and variant annotation step by step.
+<b>GATK_pipeline.sh</b> script runs the pipeline for variant calling and variant annotation step by step.
 
-geneReport.sh gets the missense variants in a particular gene. 
+<b>geneReport.sh</b> gets the missense variants in a particular gene. 
 
-Tools Required:
+<b>Tools Required:</b> <br>
 BWA, Samtools, Picard, Tabix, GATK, SnpEff
 
  
@@ -96,10 +96,12 @@ Knownsites for GATK-Recalibration --> ftp://gsapubftp-anonymous@ftp.broadinstitu
   
   Gene wise Report:
   -----------------
-  NOTE: for this step, make sure the file "header.txt is in the same folder as the script"
-  ./geneReport.sh
+  NOTE: for this step, make sure the file <b>header.txt is in the same folder as the script</b>
+  > ./geneReport.sh
+  
   OR
-  bash geneReport.sh
+  
+  > bash geneReport.sh
 
   The results from this script will be gene.txt, gene.report.txt, gene.missense.txt. The file gene.missense.txt will contain only missense variants in the given gene.
 
