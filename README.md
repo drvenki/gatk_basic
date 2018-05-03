@@ -2,7 +2,7 @@
 A very simple and basic shell script to run GATK best practice pipeline for Ubuntu environment.
 
 This is a basic variant calling and annotation pipeline for beginners using the GATK haplotype caller for variant calling and snpeff for variant annotation. 
-It is written as a single shell script to help people new to variant calling and bioinformatics. This script will get the job done for basic variant calling and annotation purpose. This pipeline is not to be used for clinical samples as this is written only for educational purposes.
+It is written as a single shell script <b>to help people new to variant calling and bioinformatics</b>. This script will get the job done for basic variant calling and annotation purpose. This pipeline is not to be used for clinical samples as this is written only for educational purposes.
 
 There are two scripts included in this repository. The scripts can be found in the gatk_basic/scripts folder.
 
